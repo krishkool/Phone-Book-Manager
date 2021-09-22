@@ -1,0 +1,41 @@
+<!-- index -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHONE BOOK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="font-family: poppins;">
+    <nav class="navbar" style="background: #5DAA68; height: 22vh; ">
+        <a class="navbar-brand" href="{% url 'home' %} " style="text-decoration: none; font-size: 35px; font-weight: 600; color: white; letter-spacing: 0.5rem;">
+            <img src="{% static 'contactApp/images/logo.png' %}" alt="logo" style="width: 100px; height: 100px;">
+          PHONE BOOK
+        </a>
+
+        <div class="menu" style="margin-top: 1rem;  text-transform: uppercase; font-size: 18px; font-weight: 500; justify-content: center;">
+            <ul class="">
+            <li style="display: inline; padding-right: 20px; letter-spacing: 0.3rem;"><a href = "{% url 'add' %}" style="text-decoration: none; color: white;">add</a></li>
+            <li style="display: inline; padding-right: 20px; letter-spacing: 0.3rem;"><a href = "{% url 'update' %}" style="text-decoration: none; color: white;">update </a></li>
+            <li style="display: inline; padding-right: 20px; letter-spacing: 0.3rem;"><a href = "{% url 'display' %}" style="text-decoration: none; color: white;">display</a></li>
+            <li style="display: inline; padding-right: 20px; letter-spacing: 0.3rem;"><a href = "{% url 'delete' %}" style="text-decoration: none; color: white;">delete</a></li>
+
+            <form action="logout" method="POST" style="display: inline;">
+                {% csrf_token %}
+            <input type="submit" value="LOG-OUT" class="btn btn-dark">
+            </form>
+            </ul>
+        </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+
+
+</body>
+</html>

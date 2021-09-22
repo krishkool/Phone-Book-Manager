@@ -1,0 +1,6 @@
+<h1>LOG-IN</h1>
+<form  method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="LOG-IN" style="margin: 0 0 0 1%;">
+</form>

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+        {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10" style="padding-top: 2rem;">
+                    <div class="alert alert-success" style="color: #242424; font-size: 18px; font-weight: 500; ">DELETE CONTACT</div>
+                    
+                    <form method="POST" action="deletecontact">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="contact" placeholder="Contact Number">
+                        </div>
+                        
+                        <input type="submit" class="btn btn-danger" value="DELETE">
+                    </form>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="" style="padding-top: 5%; color: blue; font-size: 22px;">{{success}}</div>
+                    <div class="" style="padding-top: 5%; color: red; font-size: 22px;">{{failure}}</div>
+                </div> 
+            </div>
+        </div>
+
+{% endblock %}
